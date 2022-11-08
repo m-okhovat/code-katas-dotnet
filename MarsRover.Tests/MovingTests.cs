@@ -23,21 +23,36 @@ public class MovingTests
 
         position.Should().Be("0:2:W");
     }
-    
-    
+
+    // [Fact]
+    // public void moves_in_two_direction_without_reaching_the_edge_and_obstacle()
+    // {
+    //     var position = new Rover().Execute("MRM");
+    //     
+    //     position.Should().Be("1:1:W");
+    // }
+
 }
 
 public class Rover
 {
-    
-    public string Execute(string s)
+    private int _xPosition;
+    private int _yPosition;
+    private string _direction;
+    public string Execute(string command)
     {
-        var substringLenght = s.Substring(0, s.Length - 1).Length;
-        if (s.Substring(0,1) == "R")
+        if (command.Substring(0,1) == "R")
         {
-            return $"0:{substringLenght}:W";
+            _yPosition = command.Substring(0, command.Length - 1).Length;
+            _direction = "W";
         }
-        var counter = s.Length;
-        return $"{counter}:0:N";
+        else
+        {
+            _xPosition = command.Length;
+            _direction = "N";
+
+        }
+        
+        return $"{_xPosition}:{_yPosition}:{_direction}";
     }
 }
