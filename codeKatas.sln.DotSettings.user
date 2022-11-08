@@ -1,6 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4e7d103e_002D1e66_002D4ee9_002Dba54_002De1e9b8352331/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Rover_moves_one_step_by_M_command" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRover.Tests.MovingTests.Rover_moves_by_command&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRover.Tests.MovingTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
