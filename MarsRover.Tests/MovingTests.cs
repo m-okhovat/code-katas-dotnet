@@ -25,7 +25,7 @@ public class MovingTests
     }
 
     [Fact]
-    public void moves_in_two_direction_without_reaching_the_edge_and_obstacle()
+    public void moves_north_and_then_turns_right ()
     {
         var position = new Rover().Execute("MRM");
         
