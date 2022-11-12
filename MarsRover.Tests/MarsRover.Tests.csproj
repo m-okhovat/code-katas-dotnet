@@ -22,4 +22,8 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\codeKatas\codeKatas.csproj" />
+    </ItemGroup>
+
 </Project>

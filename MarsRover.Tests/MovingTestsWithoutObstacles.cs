@@ -1,3 +1,4 @@
+using codeKatas;
 using FluentAssertions;
 
 namespace MarsRover.Tests;
@@ -55,7 +56,7 @@ public class MovingTestsWithoutObstacles
 
         position.Should().Be("1:2:S");
     }
-    
+
     [Fact]
     public void moves_toward_north_then_turns_right_then_turns_right_then_turns_right()
     {
@@ -63,7 +64,7 @@ public class MovingTestsWithoutObstacles
 
         position.Should().Be("0:2:W");
     }
-    
+
     [Fact]
     public void moves_toward_north_then_turns_right_then_turns_right_then_turns_right_then_turns_right()
     {
@@ -71,7 +72,7 @@ public class MovingTestsWithoutObstacles
 
         position.Should().Be("0:3:N");
     }
-    
+
     [Fact]
     public void moves_right_then_turns_left_then_turns_left_then_turns_left()
     {
@@ -79,66 +80,12 @@ public class MovingTestsWithoutObstacles
 
         position.Should().Be("0:0:S");
     }
-}
-
-public class Rover
-{
-    private int _xPosition;
-    private int _yPosition;
-    private string _direction = "N";
-
-    public string Execute(string command)
+    
+    [Fact]
+    public void moves_right_then_turns_left_then_turns_left_then_turns_left_then_left()
     {
-        var towardsX = false;
+        string position = new Rover().Execute("RMLMLMLMLM");
 
-        var commandChars = command.ToCharArray();
-        var trackCounter = 0;
-        for (var i = 0; i <= command.Length - 1; i++)
-        {
-            var currentChar = commandChars[i];
-            switch (currentChar)
-            {
-                case 'R':
-                    if (_direction.Equals("N"))
-                        _direction = "E";
-                    else if (_direction.Equals("E"))
-                        _direction = "S";
-                    else if (_direction.Equals("S"))
-                        _direction = "W";
-                    else if (_direction.Equals("W"))
-                        _direction = "N";
-                    towardsX = !towardsX;
-                    break;
-                case 'L':
-                    if (_direction.Equals("E"))
-                        _direction = "N";
-                    else if (_direction.Equals("N"))
-                        _direction = "W";
-                    else if (_direction.Equals("W"))
-                        _direction = "S";
-                    towardsX = !towardsX;
-                    break;
-                case 'M':
-                    if (towardsX)
-                    {
-                        if (_direction.Equals("E"))
-                            _xPosition++;
-                        else if (_direction.Equals("W"))
-                            _xPosition--;
-                    }
-
-                    else
-                    {
-                        if (_direction.Equals("N"))
-                            _yPosition++;
-                        else if (_direction.Equals("S"))
-                            _yPosition--;
-                    }
-
-                    break;
-            }
-        }
-
-        return $"{_xPosition}:{_yPosition}:{_direction}";
+        position.Should().Be("1:0:E");
     }
 }
