@@ -6,6 +6,10 @@
         <Nullable>enable</Nullable>
 
         <IsPackable>false</IsPackable>
+
+        <AssemblyName>MarsRovers.Tests</AssemblyName>
+
+        <RootNamespace>MarsRovers.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

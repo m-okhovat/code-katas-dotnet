@@ -1,6 +1,6 @@
 namespace codeKatas;
 
-public class Rover
+public class MarsRover
 {
     private int _xPosition;
     private int _yPosition;
