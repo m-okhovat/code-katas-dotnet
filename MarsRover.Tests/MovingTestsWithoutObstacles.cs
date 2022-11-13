@@ -80,7 +80,7 @@ public class MovingTestsWithoutObstacles
 
         position.Should().Be("0:0:S");
     }
-    
+
     [Fact]
     public void moves_right_then_turns_left_then_turns_left_then_turns_left_then_left()
     {
@@ -88,4 +88,13 @@ public class MovingTestsWithoutObstacles
 
         position.Should().Be("1:0:E");
     }
+
+    [Fact]
+    public void moves_in_four_directions()
+    {
+        string position = new Rover().Execute("MMMRMLMMRMMRMRMRMMM");
+
+        position.Should().Be("2:7:N");
+    }
+
 }
