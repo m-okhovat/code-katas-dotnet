@@ -8,15 +8,18 @@ public class MarsRover2
     {
         foreach (var item in command.ToCharArray())
         {
-            if (_direction.Equals("N"))
-                _direction = "E";
-            else if (_direction.Equals("E"))
-            {
-                _direction = "S";
-            }
-        }
 
+           var currentDirection =  DirectionStore
+               .Directions
+               .Find(x => x.Current.Equals(_direction));
+           _direction = currentDirection.Right;
+            
+        }
 
         return $"0:0:{_direction}";
     }
+
+    
+     
+     
 }
