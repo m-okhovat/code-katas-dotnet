@@ -1,4 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/home/mehdi/.cache/JetBrains/Rider2021.3/resharper-host/temp/Rider/vAny/CoverageData/_codeKatas.-1997657245/Snapshot/snapshot.utdcvr</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4e7d103e_002D1e66_002D4ee9_002Dba54_002De1e9b8352331/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Rover_moves_one_step_by_M_command" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MovingTestsWithoutObstacles&lt;/TestId&gt;
@@ -6,13 +7,19 @@
     &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould.turn_right&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=824aff3c_002Db081_002D48da_002Da757_002D0d6d7f03841e/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="1" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;And&gt;
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=824aff3c_002Db081_002D48da_002Da757_002D0d6d7f03841e/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="3" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Or&gt;
+    &lt;And&gt;
+      &lt;TestAncestor&gt;
+        &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MovingTestsWithoutObstacles&lt;/TestId&gt;
+        &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.ConsoleWriterTest.Write_on_console&lt;/TestId&gt;
+        &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould.turn_right&lt;/TestId&gt;
+      &lt;/TestAncestor&gt;
+      &lt;Project Location="/home/mehdi/RiderProjects/code-katas-dotnet/MarsRovers.Tests" Presentation="&amp;lt;MarsRovers.Tests&amp;gt;" /&gt;
+    &lt;/And&gt;
     &lt;TestAncestor&gt;
-      &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MovingTestsWithoutObstacles&lt;/TestId&gt;
-      &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.ConsoleWriterTest.Write_on_console&lt;/TestId&gt;
-      &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould.turn_right&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould&lt;/TestId&gt;
     &lt;/TestAncestor&gt;
-    &lt;Project Location="/home/mehdi/RiderProjects/code-katas-dotnet/MarsRovers.Tests" Presentation="&amp;lt;MarsRovers.Tests&amp;gt;" /&gt;
-  &lt;/And&gt;
+  &lt;/Or&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
