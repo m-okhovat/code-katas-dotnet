@@ -1,12 +1,18 @@
 namespace codeKatas;
 
-static class  DirectionStore
+static class DirectionStore
 {
     public static List<Direction> Directions = new List<Direction>()
     {
-        new Direction("N", "E", "W"),
-        new Direction("E", "S", "N"),
-        new Direction("S", "W", "E"),
-        new Direction("W", "N", "S"),
+        new North(),
+        new East(),
+        new South(),
+        new West(),
     };
+
+    public static Direction CurrentDirection(Direction direction)
+    {
+        return Directions
+            .Find(x => x.Value.Equals(direction.Value));
+    }
 }

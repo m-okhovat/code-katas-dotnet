@@ -2,14 +2,17 @@ namespace codeKatas;
 
 class Direction
 {
-    public string Current { get; private set; }
-    public string Right { get; private set; }
-    public string Left { get; private set; }
+    public string Value { get; private set; }
+    public Direction Right { get; private set; }
+    public Direction Left { get; private set; }
 
-    public Direction(string current, string right, string left) 
+    public Direction(string value, Direction right, Direction left)
     {
-        Current = current;
+        Value = value;
         Right = right;
         Left = left;
     }
+
+    
+
 }

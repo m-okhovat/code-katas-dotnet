@@ -2,7 +2,7 @@ namespace codeKatas;
 
 public class MarsRover2
 {
-    private string _direction = "N";
+    private Direction _direction = new North();
 
     public string Execute(string command)
     {
@@ -10,21 +10,21 @@ public class MarsRover2
         {
             if (item.Equals('R'))
             {
-                var currentDirection = DirectionStore
-                    .Directions
-                    .Find(x => x.Current.Equals(_direction));
-                _direction = currentDirection.Right;
+                var currentDirection = CurrentDirection();
+                // _direction = _direction.Right;
             }
             else if (item.Equals('L'))
             {
-                var currentDirection = DirectionStore
-                    .Directions
-                    .Find(x => x.Current.Equals(_direction));
-
-                _direction = currentDirection.Left;
+                var currentDirection = CurrentDirection();
+                // _direction = _direction.Left;
             }
         }
 
-        return $"0:0:{_direction}";
+        return $"0:0:{_direction.Value}";
+    }
+
+    private Direction? CurrentDirection()
+    {
+        return DirectionStore.CurrentDirection(_direction);
     }
 }
