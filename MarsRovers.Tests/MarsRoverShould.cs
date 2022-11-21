@@ -39,8 +39,8 @@ public class MarsRoverShould
     [Fact]
     public void moves_to_north()
     {
-        const string expected = "0:1:N";
-        const string command = "M";
+        const string expected = "0:2:N";
+        const string command = "MM";
 
         var roverPosition = _marsRover.Execute(command);
 

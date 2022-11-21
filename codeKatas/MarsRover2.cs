@@ -6,6 +6,7 @@ public class MarsRover2
 {
     private Direction _direction = new North();
     private string _yAxis = "0";
+    private short _yCounter = 0;
 
     public string Execute(string command)
     {
@@ -13,7 +14,8 @@ public class MarsRover2
         {
             if (item.Equals('M'))
             {
-                _yAxis = "1";
+                _yCounter++;
+                _yAxis = _yCounter.ToString();
             }
             if (item.Equals('R'))
             {
