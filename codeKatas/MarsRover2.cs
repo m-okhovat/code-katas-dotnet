@@ -23,6 +23,12 @@ public class MarsRover2
                 {
                     _xAxis++;
                 }
+
+                if (_direction is West)
+                    _xAxis--;
+
+                if (_direction is South)
+                    _yAxis--;
             }
 
             if (item.Equals('R'))

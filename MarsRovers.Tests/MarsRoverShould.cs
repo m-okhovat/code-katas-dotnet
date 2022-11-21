@@ -47,11 +47,16 @@ public class MarsRoverShould
         roverPosition.Should().Be(expected);
     }
 
-    [Fact]
-    public void move_towards_east()
+    [Theory]
+    [InlineData("RMMMM","4:0:E")]
+    [InlineData("RMMLMMM","2:3:N")]
+    [InlineData("MMRMMM","3:2:E")]
+    [InlineData("RMMMMLMMLMM","2:2:W")]
+    [InlineData("RMMMMLMMLMMLM","2:1:S")]
+    public void move_and_turn_around(string command, string position)
     {
-        var roverPosition = _marsRover.Execute("RMMMM");
+        var roverPosition = _marsRover.Execute(command);
         
-        roverPosition.Should().Be("4:0:E");
+        roverPosition.Should().Be(position);
     }
 }

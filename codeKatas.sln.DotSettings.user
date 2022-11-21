@@ -27,5 +27,6 @@
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould.turn_right.turn_right(command: "R", position: "0:0:E")&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould.moves_to_north&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould.move_towards_east&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
