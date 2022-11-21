@@ -26,5 +26,6 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8a2000cd_002Da713_002D4a91_002Dbe73_002D69e956c54418/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="turn_right(command: &amp;quot;R&amp;quot;, position: &amp;quot;0:0:E&amp;quot;)" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould.turn_right.turn_right(command: "R", position: "0:0:E")&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould.moves_to_north&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
