@@ -5,8 +5,7 @@ namespace codeKatas;
 public class MarsRover2
 {
     private Direction _direction = new North();
-    private string _yAxis = "0";
-    private short _yCounter = 0;
+    private short _yAxis = 0;
 
     public string Execute(string command)
     {
@@ -14,8 +13,7 @@ public class MarsRover2
         {
             if (item.Equals('M'))
             {
-                _yCounter++;
-                _yAxis = _yCounter.ToString();
+                _yAxis++;
             }
             if (item.Equals('R'))
             {
