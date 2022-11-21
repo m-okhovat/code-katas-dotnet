@@ -20,7 +20,7 @@ public class MarsRoverShould
     public void turn_right(string command, string position)
     {
         var roverPosition = _marsRover.Execute(command);
-        
+
         roverPosition.Should().Be(position);
     }
 
@@ -32,7 +32,7 @@ public class MarsRoverShould
     public void turn_left(string command, string position)
     {
         var roverPosition = _marsRover.Execute(command);
-        
+
         roverPosition.Should().Be(position);
     }
 
@@ -48,17 +48,28 @@ public class MarsRoverShould
     }
 
     [Theory]
-    [InlineData("RMMMM","4:0:E")]
-    [InlineData("RMMLMMM","2:3:N")]
-    [InlineData("MMRMMM","3:2:E")]
-    [InlineData("RMMMMLMMLMM","2:2:W")]
-    [InlineData("RMMMMLMMLMMLM","2:1:S")]
+    [InlineData("RMMMM", "4:0:E")]
+    [InlineData("RMMLMMM", "2:3:N")]
+    [InlineData("MMRMMM", "3:2:E")]
+    [InlineData("RMMMMLMMLMM", "2:2:W")]
+    [InlineData("RMMMMLMMLMMLM", "2:1:S")]
     public void move_and_turn_around(string command, string position)
     {
         var roverPosition = _marsRover.Execute(command);
+
+        roverPosition.Should().Be(position);
+    }
+
+    [Theory]
+    [InlineData("MMMMMMMMMMMM", "0:2:N")]
+    [InlineData("MRMMMMMMMMMMMM", "2:1:E")]
+    [InlineData("LM", "9:0:W")]
+    [InlineData("RRMM", "0:8:S")]
+    public void wrap_around_when_reaching_to_the_edges(string command, string position)
+    {
+        string roverPosition = _marsRover.Execute(command);
         
         roverPosition.Should().Be(position);
     }
-    
-    
+
 }

@@ -5,8 +5,8 @@ namespace codeKatas;
 public class MarsRover2
 {
     private Direction _direction = new North();
-    private short _yAxis = 0;
-    private short _xAxis = 0;
+    private int _yAxis = 0;
+    private int _xAxis = 0;
     private const char MoveCommand = 'M';
     private const char TurnLeftCommand = 'L';
     private const char TurnRightCommand = 'R';
@@ -15,25 +15,6 @@ public class MarsRover2
     {
         foreach (var item in command.ToCharArray())
         {
-            if (item.Equals(MoveCommand))
-            {
-                switch (_direction)
-                {
-                    case North:
-                        _yAxis++;
-                        break;
-                    case East:
-                        _xAxis++;
-                        break;
-                    case West:
-                        _xAxis--;
-                        break;
-                    case South:
-                        _yAxis--;
-                        break;
-                }
-            }
-
             if (item.Equals(TurnRightCommand))
             {
                 var rotatedDirection = GetCurrentDirection(_direction.Right);
@@ -47,6 +28,27 @@ public class MarsRover2
                     _direction = rotatedDirection;
                 }
             }
+            
+            if (item.Equals(MoveCommand))
+            {
+                switch (_direction)
+                {
+                    case North:
+                        _yAxis =  (_yAxis % 10) + 1;
+                        break;
+                    case East:
+                        _xAxis= (_xAxis % 10) +1;
+                        break;
+                    case West:
+                        _xAxis = _xAxis == 0? 9  : _xAxis - 1;
+                        break;
+                    case South:
+                        _yAxis = _yAxis == 0 ? 9 : _yAxis - 1;
+                        break;
+                }
+            }
+
+          
         }
 
         return $"{_xAxis}:{_yAxis}:{_direction.Value}";
