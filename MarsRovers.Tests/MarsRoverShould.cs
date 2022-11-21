@@ -28,4 +28,12 @@ public class MarsRoverShould
 
         marsRover.Execute(command).Should().Be(position);
     }
+
+    [Fact]
+    public void moves_to_north()
+    {
+        MarsRover2 marsRover = new MarsRover2();
+        
+        marsRover.Execute("M").Should().Be("0:1:N");
+    }
 }

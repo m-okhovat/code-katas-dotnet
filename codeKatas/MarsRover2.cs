@@ -5,11 +5,16 @@ namespace codeKatas;
 public class MarsRover2
 {
     private Direction _direction = new North();
+    private string _yAxis = "0";
 
     public string Execute(string command)
     {
         foreach (var item in command.ToCharArray())
         {
+            if (item.Equals('M'))
+            {
+                _yAxis = "1";
+            }
             if (item.Equals('R'))
             {
                 var rotatedDirection = GetCurrentDirection( _direction.Right);
@@ -22,7 +27,7 @@ public class MarsRover2
             }
         }
 
-        return $"0:0:{_direction.Value}";
+        return $"0:{_yAxis}:{_direction.Value}";
     }
 
     private Direction GetCurrentDirection(string direction)
