@@ -6,6 +6,7 @@ public class MarsRover2
 {
     private Direction _direction = new North();
     private short _yAxis = 0;
+    private short _xAxis = 0;
 
     public string Execute(string command)
     {
@@ -13,21 +14,30 @@ public class MarsRover2
         {
             if (item.Equals('M'))
             {
-                _yAxis++;
+                if (_direction is North)
+                {
+                    _yAxis++;
+                }
+
+                if (_direction is East)
+                {
+                    _xAxis++;
+                }
             }
+
             if (item.Equals('R'))
             {
-                var rotatedDirection = GetCurrentDirection( _direction.Right);
+                var rotatedDirection = GetCurrentDirection(_direction.Right);
                 _direction = rotatedDirection;
             }
             else if (item.Equals('L'))
             {
-                var rotatedDirection = GetCurrentDirection( _direction.Left);
+                var rotatedDirection = GetCurrentDirection(_direction.Left);
                 _direction = rotatedDirection;
             }
         }
 
-        return $"0:{_yAxis}:{_direction.Value}";
+        return $"{_xAxis}:{_yAxis}:{_direction.Value}";
     }
 
     private Direction GetCurrentDirection(string direction)

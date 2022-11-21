@@ -37,7 +37,7 @@ public class MarsRoverShould
     }
 
     [Fact]
-    public void moves_to_north()
+    public void move_to_north()
     {
         const string expected = "0:2:N";
         const string command = "MM";
@@ -45,5 +45,13 @@ public class MarsRoverShould
         var roverPosition = _marsRover.Execute(command);
 
         roverPosition.Should().Be(expected);
+    }
+
+    [Fact]
+    public void move_towards_east()
+    {
+        var roverPosition = _marsRover.Execute("RMMMM");
+        
+        roverPosition.Should().Be("4:0:E");
     }
 }
