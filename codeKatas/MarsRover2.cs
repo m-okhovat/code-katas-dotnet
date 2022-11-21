@@ -7,39 +7,45 @@ public class MarsRover2
     private Direction _direction = new North();
     private short _yAxis = 0;
     private short _xAxis = 0;
+    private const char MoveCommand = 'M';
+    private const char TurnLeftCommand = 'L';
+    private const char TurnRightCommand = 'R';
 
     public string Execute(string command)
     {
         foreach (var item in command.ToCharArray())
         {
-            if (item.Equals('M'))
+            if (item.Equals(MoveCommand))
             {
-                if (_direction is North)
+                switch (_direction)
                 {
-                    _yAxis++;
+                    case North:
+                        _yAxis++;
+                        break;
+                    case East:
+                        _xAxis++;
+                        break;
+                    case West:
+                        _xAxis--;
+                        break;
+                    case South:
+                        _yAxis--;
+                        break;
                 }
-
-                if (_direction is East)
-                {
-                    _xAxis++;
-                }
-
-                if (_direction is West)
-                    _xAxis--;
-
-                if (_direction is South)
-                    _yAxis--;
             }
 
-            if (item.Equals('R'))
+            if (item.Equals(TurnRightCommand))
             {
                 var rotatedDirection = GetCurrentDirection(_direction.Right);
                 _direction = rotatedDirection;
             }
-            else if (item.Equals('L'))
+            else
             {
-                var rotatedDirection = GetCurrentDirection(_direction.Left);
-                _direction = rotatedDirection;
+                if (item.Equals(TurnLeftCommand))
+                {
+                    var rotatedDirection = GetCurrentDirection(_direction.Left);
+                    _direction = rotatedDirection;
+                }
             }
         }
 
