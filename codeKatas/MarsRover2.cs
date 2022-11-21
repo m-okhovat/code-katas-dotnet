@@ -1,3 +1,5 @@
+using codeKatas.Directions;
+
 namespace codeKatas;
 
 public class MarsRover2
@@ -10,21 +12,21 @@ public class MarsRover2
         {
             if (item.Equals('R'))
             {
-                var currentDirection = CurrentDirection();
-                // _direction = _direction.Right;
+                var rotatedDirection = GetCurrentDirection( _direction.Right);
+                _direction = rotatedDirection;
             }
             else if (item.Equals('L'))
             {
-                var currentDirection = CurrentDirection();
-                // _direction = _direction.Left;
+                var rotatedDirection = GetCurrentDirection( _direction.Left);
+                _direction = rotatedDirection;
             }
         }
 
         return $"0:0:{_direction.Value}";
     }
 
-    private Direction? CurrentDirection()
+    private Direction GetCurrentDirection(string direction)
     {
-        return DirectionStore.CurrentDirection(_direction);
+        return DirectionStore.MatchingDirection(direction);
     }
 }

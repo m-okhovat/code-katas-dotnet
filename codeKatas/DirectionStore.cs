@@ -1,3 +1,5 @@
+using codeKatas.Directions;
+
 namespace codeKatas;
 
 static class DirectionStore
@@ -10,9 +12,9 @@ static class DirectionStore
         new West(),
     };
 
-    public static Direction CurrentDirection(Direction direction)
+    public static Direction MatchingDirection(string direction)
     {
         return Directions
-            .Find(x => x.Value.Equals(direction.Value));
+            .Find(x => x.Value.Equals(direction));
     }
 }
