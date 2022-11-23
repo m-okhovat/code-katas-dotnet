@@ -72,18 +72,22 @@ public class MarsRoverShould
         roverPosition.Should().Be(position);
     }
 
-    [Fact]
-    public void returns_back_to_last_position_when_facing_an_obstacle()
+    [Theory]
+    [InlineData("MMRMRMM","O:1:2:S")]
+    [InlineData("RMMLMLMM","O:2:1:W")]
+    public void returns_back_to_last_position_when_facing_an_obstacle(string command, string position)
     {
         var obstacles = new List<Position>()
         {
-            new Position(0,3)
+            new Position(0,4),
+            new Position(3, 0),
+            new Position(1,1)
         };
         var rover = new MarsRover2(new Grid(obstacles));
 
-        var roverPosition = rover.Execute("MMM");
+        var roverPosition = rover.Execute(command);
         
-        roverPosition.Should().Be("O:0:2:N");
+        roverPosition.Should().Be(position);
     }
 }
 

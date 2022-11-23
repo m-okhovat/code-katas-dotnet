@@ -41,16 +41,16 @@ public class MarsRover2
                 switch (_direction)
                 {
                     case North:
-                        _yAxis = WrapAroundWhenReachMaximum(_yAxis);
+                        _yAxis = MoveUp(_yAxis);
                         break;
                     case East:
-                        _xAxis = WrapAroundWhenReachMaximum(_xAxis);
+                        _xAxis = MoveRight(_xAxis);
                         break;
                     case West:
-                        _xAxis = WrapAroundWhenReachMinimum(_xAxis);
+                        _xAxis = MoveLeft(_xAxis);
                         break;
                     case South:
-                        _yAxis = WrapAroundWhenReachMinimum(_yAxis);
+                        _yAxis = MoveDown(_yAxis);
                         break;
                 }
             }
@@ -75,19 +75,50 @@ public class MarsRover2
         _direction = rotatedDirection;
     }
 
-    private int WrapAroundWhenReachMaximum(int yAxis)
+    private int MoveUp(int current)
     {
-        var newPosition = (yAxis % MaxDistance) + 1;
-        if (_grid._obstacles.All(a => a.Y != newPosition && a.X == _xAxis))
+        var newPosition = (current % MaxDistance) + 1;
+        
+        if (!_grid._obstacles.Any(a => a.Y == newPosition && a.X == _xAxis))
             return newPosition;
+        
         _doesFacedAnObstacle = true;
         return _yAxis;
     }
 
-    private int WrapAroundWhenReachMinimum(int xAxis)
+    private int MoveRight(int current)
     {
-        return xAxis == MinDistance ? 9 : xAxis - 1;
+        var newPosition = (current % MaxDistance) + 1;
+        
+        if (!_grid._obstacles.Any(a => a.X == newPosition && a.Y == _yAxis))
+            return newPosition;
+        
+        _doesFacedAnObstacle = true;
+        return _xAxis;
     }
+    private int MoveDown(int current)
+    {
+        var newPosition = current == MinDistance ? 9 : current - 1;
+
+        if (!_grid._obstacles.Any(a => a.Y == newPosition && a.X == _xAxis))
+            return newPosition;
+        
+        _doesFacedAnObstacle = true;
+        return current;
+        
+    }
+    
+    private int MoveLeft(int current)
+    {
+        var newPosition = current == MinDistance ? 9 : current - 1;
+
+        if (!_grid._obstacles.Any(a => a.Y == _yAxis && a.X == newPosition))
+            return newPosition;
+        
+        _doesFacedAnObstacle = true;
+        return current;
+    }
+
 
     private Direction GetCurrentDirection(string direction)
     {
