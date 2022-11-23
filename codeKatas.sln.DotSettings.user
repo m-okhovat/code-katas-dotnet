@@ -23,6 +23,9 @@
     &lt;/TestAncestor&gt;
   &lt;/Or&gt;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8410b319_002D05cc_002D4285_002Db9f3_002Dd02f071f77ac/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="3" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Solution /&gt;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8a2000cd_002Da713_002D4a91_002Dbe73_002D69e956c54418/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="turn_right(command: &amp;quot;R&amp;quot;, position: &amp;quot;0:0:E&amp;quot;)" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould.turn_right.turn_right(command: "R", position: "0:0:E")&lt;/TestId&gt;

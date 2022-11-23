@@ -9,7 +9,7 @@ public class MarsRoverShould
 
     public MarsRoverShould()
     {
-        _marsRover = new MarsRover2();
+        _marsRover = new MarsRover2(new Grid(new List<Position>()));
     }
 
     [Theory]
@@ -72,4 +72,18 @@ public class MarsRoverShould
         roverPosition.Should().Be(position);
     }
 
+    [Fact]
+    public void returns_back_to_last_position_when_facing_an_obstacle()
+    {
+        var obstacles = new List<Position>()
+        {
+            new Position(0,3)
+        };
+        var rover = new MarsRover2(new Grid(obstacles));
+
+        var roverPosition = rover.Execute("MMM");
+        
+        roverPosition.Should().Be("O:0:2:N");
+    }
 }
+
