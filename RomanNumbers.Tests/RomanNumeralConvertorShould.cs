@@ -9,6 +9,7 @@ public class RomanNumeralConvertorShould
     [InlineData(1, "I" )]
     [InlineData(2, "II" )]
     [InlineData(3, "III" )]
+    [InlineData(4, "IV" )]
     public void convert_one(int number , string expectedRomanNumber)
     {
         var romanNumeralConvertor = new RomanNumeralConvertor();
