@@ -5,11 +5,11 @@ namespace MarsRovers.Tests;
 
 public class MarsRoverShould
 {
-    private MarsRover2 _marsRover;
+    private MarsRover _marsRover;
 
     public MarsRoverShould()
     {
-        _marsRover = new MarsRover2(new Grid(new List<Position>()));
+        _marsRover = new MarsRover(new Grid(new List<Position>()));
     }
 
     [Theory]
@@ -84,7 +84,7 @@ public class MarsRoverShould
             new Position(3, 0),
             new Position(1,1)
         };
-        var rover = new MarsRover2(new Grid(obstacles));
+        var rover = new MarsRover(new Grid(obstacles));
 
         var roverPosition = rover.Execute(command);
         

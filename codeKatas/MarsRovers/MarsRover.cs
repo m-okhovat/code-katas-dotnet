@@ -2,14 +2,14 @@ using codeKatas.Directions;
 
 namespace codeKatas;
 
-public class MarsRover2
+public class MarsRover
 {
     private readonly Grid _grid;
     private Direction _direction = new North();
     private bool _hasFacedAnObstacle = false;
     private Position _position = new Position(0, 0);
 
-    public MarsRover2(Grid grid)
+    public MarsRover(Grid grid)
     {
         _grid = grid;
     }
