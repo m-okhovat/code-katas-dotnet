@@ -6,10 +6,9 @@ public class MarsRover2
 {
     private readonly Grid _grid;
     private Direction _direction = new North();
-    private int _yAxis = 0;
-    private int _xAxis = 0;
-    private bool _doesFacedAnObstacle = false;
-    
+    private bool _hasFacedAnObstacle = false;
+    private Position _position = new Position(0, 0);
+
     public MarsRover2(Grid grid)
     {
         _grid = grid;
@@ -35,92 +34,46 @@ public class MarsRover2
                 TurnLeft();
             }
 
-
             if (item.Equals(MoveCommand))
             {
-                switch (_direction)
-                {
-                    case North:
-                        _yAxis = MoveUp(_yAxis);
-                        break;
-                    case East:
-                        _xAxis = MoveRight(_xAxis);
-                        break;
-                    case West:
-                        _xAxis = MoveLeft(_xAxis);
-                        break;
-                    case South:
-                        _yAxis = MoveDown(_yAxis);
-                        break;
-                }
+                _position = Move(_position, _direction);
             }
         }
 
-        if (!_doesFacedAnObstacle)
-            return $"{_xAxis}:{_yAxis}:{_direction.Value}";
-        
-        _doesFacedAnObstacle = false;
-        return $"O:{_xAxis}:{_yAxis}:{_direction.Value}";
+        var obstaclePart = string.Empty;
+        if (_hasFacedAnObstacle)
+            obstaclePart = "O:";
+
+        _hasFacedAnObstacle = false;
+
+        return $"{obstaclePart}{_position.X}:{_position.Y}:{_direction.Value}";
+    }
+
+    private Position Move(Position currentPosition, Direction direction)
+    {
+        var nextPosition = _grid.NextPosition(currentPosition, direction);
+
+        if (nextPosition is not null)
+            return nextPosition;
+
+        _hasFacedAnObstacle = true;
+        return currentPosition;
     }
 
     private void TurnLeft()
     {
-        var rotatedDirection = GetCurrentDirection(_direction.Left);
+        var rotatedDirection = MatchingDirectionOf(_direction.Left);
         _direction = rotatedDirection;
     }
 
     private void TurnRight()
     {
-        var rotatedDirection = GetCurrentDirection(_direction.Right);
+        var rotatedDirection = MatchingDirectionOf(_direction.Right);
         _direction = rotatedDirection;
     }
 
-    private int MoveUp(int current)
-    {
-        var newPosition = (current % MaxDistance) + 1;
-        
-        if (!_grid._obstacles.Any(a => a.Y == newPosition && a.X == _xAxis))
-            return newPosition;
-        
-        _doesFacedAnObstacle = true;
-        return _yAxis;
-    }
 
-    private int MoveRight(int current)
-    {
-        var newPosition = (current % MaxDistance) + 1;
-        
-        if (!_grid._obstacles.Any(a => a.X == newPosition && a.Y == _yAxis))
-            return newPosition;
-        
-        _doesFacedAnObstacle = true;
-        return _xAxis;
-    }
-    private int MoveDown(int current)
-    {
-        var newPosition = current == MinDistance ? 9 : current - 1;
-
-        if (!_grid._obstacles.Any(a => a.Y == newPosition && a.X == _xAxis))
-            return newPosition;
-        
-        _doesFacedAnObstacle = true;
-        return current;
-        
-    }
-    
-    private int MoveLeft(int current)
-    {
-        var newPosition = current == MinDistance ? 9 : current - 1;
-
-        if (!_grid._obstacles.Any(a => a.Y == _yAxis && a.X == newPosition))
-            return newPosition;
-        
-        _doesFacedAnObstacle = true;
-        return current;
-    }
-
-
-    private Direction GetCurrentDirection(string direction)
+    private Direction MatchingDirectionOf(string direction)
     {
         return DirectionStore.MatchingDirection(direction);
     }

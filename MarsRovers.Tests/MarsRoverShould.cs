@@ -75,6 +75,7 @@ public class MarsRoverShould
     [Theory]
     [InlineData("MMRMRMM","O:1:2:S")]
     [InlineData("RMMLMLMM","O:2:1:W")]
+    [InlineData("MMMMMM","O:0:3:N")]
     public void returns_back_to_last_position_when_facing_an_obstacle(string command, string position)
     {
         var obstacles = new List<Position>()

@@ -1,6 +1,6 @@
 namespace codeKatas;
 
-class Direction
+public  class Direction
 {
     public string Value { get; private set; }
     

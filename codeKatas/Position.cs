@@ -1,11 +1,11 @@
 namespace codeKatas;
 
-public class Position
+public record Position
 {
-    public short X { get; private set; }
-    public short Y { get; private set; }
+    public int X { get; private set; }
+    public int Y { get; private set; }
 
-    public Position(short x, short y)
+    public Position(int x, int y)
     {
         X = x;
         Y = y;
