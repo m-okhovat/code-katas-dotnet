@@ -1,10 +1,20 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/home/mehdi/.cache/JetBrains/Rider2021.3/resharper-host/temp/Rider/vAny/CoverageData/_codeKatas.-1997657245/Snapshot/snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=48341aea_002Dd049_002D4de0_002D9e1f_002Df8c0a957659b/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="3" Name="convert_one" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::26F1B3B7-FE2C-40C5-9986-B0BBF98052A2::net6.0::RomanNumbers.Tests.RomanNumeralConvertorShould&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4e7d103e_002D1e66_002D4ee9_002Dba54_002De1e9b8352331/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Rover_moves_one_step_by_M_command" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MovingTestsWithoutObstacles&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.ConsoleWriterTest.Write_on_console&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould.turn_right&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=64894a79_002D6827_002D4be2_002Db1a0_002Ded9ce209e427/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="3" Name="MarsRoverShould" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	
@@ -33,5 +43,10 @@
     &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould.move_towards_east&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould.return_to_source_location_when_reaches_to_the_end&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::F6E42BCF-C173-405B-9195-64EC8865EBD4::net6.0::MarsRovers.Tests.MarsRoverShould.move_and_turn_around&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b875b2c3_002D69d7_002D4d7f_002D9f80_002D300b216615df/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="3" IsActive="True" Name="RomanNumeralConvertorShould" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::26F1B3B7-FE2C-40C5-9986-B0BBF98052A2::net6.0::RomanNumbers.Tests.RomanNumeralConvertorShould&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

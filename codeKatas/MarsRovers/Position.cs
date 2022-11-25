@@ -1,4 +1,4 @@
-namespace codeKatas;
+namespace codeKatas.MarsRovers;
 
 public record Position
 {

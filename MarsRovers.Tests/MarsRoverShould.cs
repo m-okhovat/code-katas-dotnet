@@ -1,4 +1,5 @@
 using codeKatas;
+using codeKatas.MarsRovers;
 using FluentAssertions;
 
 namespace MarsRovers.Tests;

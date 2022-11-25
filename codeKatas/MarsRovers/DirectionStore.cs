@@ -1,6 +1,6 @@
-using codeKatas.Directions;
+using codeKatas.MarsRovers.Directions;
 
-namespace codeKatas;
+namespace codeKatas.MarsRovers;
 
 static class DirectionStore
 {

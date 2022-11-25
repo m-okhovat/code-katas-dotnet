@@ -1,4 +1,4 @@
-namespace codeKatas.Directions;
+namespace codeKatas.MarsRovers.Directions;
 
 class North : Direction
 {
